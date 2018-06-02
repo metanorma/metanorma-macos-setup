@@ -2,10 +2,10 @@
 # .about.yml project metadata
 #
 # Short name that acts as the project identifier (required)
-name: laptop
+name: metanorma-macos-setup
 
 # Full proper name of the project (required)
-full_name: Laptop Script
+full_name: Metanorma macOS Setup Script
 
 # The type of content in the repo
 # values: app, docs, policy
@@ -24,12 +24,13 @@ stage: live
 
 # Description of the project
 description: >
-  A shell script that turns your Mac into an awesome web development
-  machine.
+  Setup script for the Metanorma publishing flow on macOS.
 
 # Tags that describe the project or aspects of the project
 tags:
+- metanorma
 - automation
+- standardization
 
 # Should be 'true' if the project has a continuous build (required)
 # values: true, false
@@ -41,12 +42,12 @@ testable: true
 #   id: Internal team identifier/user name
 #   role: Team member's role; leads should be designated as 'lead'
 team:
-- github: monfresh
-  id: Moncef Belyamani
+- github: ronaldtse
+  id: Ronald Tse
   role: lead
-- github: afeld
-  id: Aidan Feldman
-  role: developer
+- github: opoudjis
+  id: Nick Nichols
+  role: lead
 
 # Partners for whom the project is developed
 # partners:
@@ -69,8 +70,7 @@ stack:
 
 # Brief description of the project's outcomes
 impact: >
-  It allows new and current employees to easily set up their laptop with
-  all the tools needed to be productive on day one.
+  Allows a one-step setup for creating Metanorma documents.
 
 # Services used to supply project status information
 # Items:
@@ -81,8 +81,8 @@ impact: >
 services:
 - name: Circle CI
   category: Continous integration
-  url: https://circleci.com/gh/18F/laptop
-  badge: https://circleci.com/gh/18F/laptop.svg
+  url: https://circleci.com/gh/riboseinc/metanorma-macos-setup
+  badge: https://circleci.com/gh/riboseinc/metanorma-macos-setup.svg
 
 # Licenses that apply to the project and/or its components (required)
 # Items by property name pattern:
@@ -96,6 +96,9 @@ licenses:
   18F-laptop:
     name: CC0
     url: https://github.com/18F/laptop/blob/master/LICENSE.md
+  metanorma-macos-setup:
+    name: MIT
+    url: https://github.com/riboseinc/metanorma-macos-setup/blob/master/LICENSE
 
 # Blogs or websites associated with project development
 # blog:

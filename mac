@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# Welcome to the 18F laptop script!
-# Be prepared to turn your laptop (or desktop)
-# into an awesome development machine.
+# The Metanorma macOS Setup script
 
 fancy_echo() {
   # shellcheck disable=SC2039
@@ -156,6 +154,7 @@ else
 EOF
 fi
 
+fancy_echo '[node: puppeteer] Installing puppeteer...'
 npm install -g --save --save-exact puppeteer
 
 fancy_echo '...Finished Node.js installation checks.'
