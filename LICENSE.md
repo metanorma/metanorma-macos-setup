@@ -1,9 +1,15 @@
-This 18F project is originally based on [thoughtbot's laptop project](https://github.com/thoughtbot/laptop).
+The metanorma-setup script is originally based on [18F's Laptop](https://github.com/18F/laptop) script
+and [thoughtbot's laptop project](https://github.com/thoughtbot/laptop).
+
+## MIT license
+
+The content in this repository is provided under the MIT license.
 
 
 ## thoughtbot's work
 
 [thoughtbot's laptop project](https://github.com/thoughtbot/laptop), and code we retain here from it, is released under the MIT License:
+
 
 ```
 Copyright (c) 2011-2014 thoughtbot, inc.
@@ -27,24 +33,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 ```
 
-## Public domain
 
-18F's contributions to this project are covered by the following:
+## 18F's work
 
-As a work of the United States Government, this project is in the
-public domain within the United States.
-
-Additionally, we waive copyright and related rights in the work
-worldwide through the CC0 1.0 Universal public domain dedication.
-
-## CC0 1.0 Universal Summary
+[18F's contributions](https://github.com/18F/laptop), and code we retain here from it, is released under the CC0 License:
 
 This is a human-readable summary of the
 [Legal Code (read the full text)][code].
 
 [code]: https://creativecommons.org/publicdomain/zero/1.0/legalcode
 
-### No Copyright
+```
+No Copyright
 
 The person who associated a work with this deed has dedicated the work to
 the public domain by waiving all of his or her rights to the work worldwide
@@ -54,7 +54,8 @@ extent allowed by law.
 You can copy, modify, distribute and perform the work, even for commercial
 purposes, all without asking permission.
 
-### Other Information
+
+Other Information
 
 In no way are the patent or trademark rights of any person affected by CC0,
 nor are the rights that other persons may have in the work or in how the
@@ -65,3 +66,4 @@ this deed makes no warranties about the work, and disclaims liability for
 all uses of the work, to the fullest extent permitted by applicable law.
 When using or citing the work, you should not imply endorsement by the
 author or the affirmer.
+```
