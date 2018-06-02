@@ -1,13 +1,13 @@
-Hi! Thanks for using the laptop script.
+Hi! Thanks for using the metanorma-macos-setup script.
 
 If you are reporting an issue with the script, please fill out the details
 below to help us troubleshoot the error.
 
-### OS X version you are using
+### macOS version you are using
 
-### Did you recently upgrade from a previous OS X version?
+### Did you recently upgrade from a previous macOS version?
 
-### Are you running the script on a fresh OS X installation?
+### Are you running the script on a fresh macOS installation?
 
 ### Did you have any of the following tools installed before running the script?
 
