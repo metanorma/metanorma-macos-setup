@@ -15,4 +15,4 @@ below to help us troubleshoot the error.
 - Apple's command line tools
 - Anything the script installs (see "What it sets up" in the README)
 
-### Copy and paste the entire contents of laptop.log, or attach it
+### Copy and paste the entire contents of metanorma-setup.log, or attach it

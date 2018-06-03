@@ -37,7 +37,7 @@ points. This is the same password that you use to log in to your Mac.
 
 It is highly recommended to run the script regularly to keep your computer
 up to date. Once the script has been installed, you'll be able to run it
-at your convenience by typing `laptop` and hitting `return` in your Terminal.
+at your convenience by typing `metanorma-setup` and hitting `return` in your Terminal.
 
 Debugging
 ---------
@@ -64,6 +64,7 @@ What it sets up
 [Homebrew Cask]: http://caskroom.io/
 [Node.js]: http://nodejs.org/
 [NPM]: https://www.npmjs.org/
+[nvm]: https://github.com/creationix/nvm
 [puppeteer]: https://github.com/GoogleChrome/puppeteer
 [Ruby]: https://www.ruby-lang.org/en/
 [ruby-install]: https://github.com/postmodern/ruby-install
