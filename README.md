@@ -14,12 +14,13 @@ based on what is already installed on the machine.
 Requirements
 ------------
 
-We support:
+It supports:
 
-* [macOS Sierra (10.12)](https://www.apple.com/osx/)
+* [macOS High Sierra (10.13)](https://www.apple.com/macos/high-sierra)
+* macOS Sierra (10.12)
 * macOS El Capitan (10.11)
 
-Older versions may work but aren't regularly tested.
+Older versions may work but are not tested.
 
 Install
 -------
@@ -76,7 +77,7 @@ internet connection).
 Credits
 -------
 
-The metanorma-setup script is based on:
+The `metanorma-macos-setup` script is based on:
 
 * [18F's Laptop](https://github.com/18F/laptop) script (CC0 licensed)
 * [thoughtbot's laptop](https://github.com/thoughtbot/laptop) script (MIT licensed)
