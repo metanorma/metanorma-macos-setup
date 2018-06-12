@@ -51,8 +51,10 @@ What it sets up
 ---------------
 
 * [chruby] for managing [Ruby] versions
+* [Bundler] for managing [Ruby] gems
 * [Homebrew] for managing operating system libraries
 * [Homebrew Cask] for quickly installing Mac apps from the command line
+* [Java] which is a dependency for some of the Metanorma gems
 * [nvm] for managing Node.js versions if you do not have [Node.js] already installed (Includes latest [Node.js] and [NPM], for running apps and installing JavaScript packages)
 * [puppeteer] for running Headless Chrome via Node.js (used to generate PDFs from HTML)
 * [ruby-install] for installing different versions of Ruby
@@ -62,7 +64,9 @@ What it sets up
 [chruby]: https://github.com/postmodern/chruby
 [Homebrew]: http://brew.sh/
 [Homebrew Cask]: http://caskroom.io/
+[Java]: https://java.com/en/download/
 [Node.js]: http://nodejs.org/
+[nvm]: https://github.com/creationix/nvm
 [NPM]: https://www.npmjs.org/
 [puppeteer]: https://github.com/GoogleChrome/puppeteer
 [Ruby]: https://www.ruby-lang.org/en/
