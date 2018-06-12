@@ -129,6 +129,11 @@ else
   echo "in which case, you can ignore these errors."
 fi
 
+# install Java if it's not already there
+if ! [ -x "$(command -v java)" ]; then
+  brew cask install java
+fi
+
 # shellcheck disable=SC2016
 append_to_file "$shell_file" 'eval "$(hub alias -s)"'
 
