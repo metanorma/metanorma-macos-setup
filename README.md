@@ -14,12 +14,13 @@ based on what is already installed on the machine.
 Requirements
 ------------
 
-We support:
+It supports:
 
-* [macOS Sierra (10.12)](https://www.apple.com/osx/)
+* [macOS High Sierra (10.13)](https://www.apple.com/macos/high-sierra)
+* macOS Sierra (10.12)
 * macOS El Capitan (10.11)
 
-Older versions may work but aren't regularly tested.
+Older versions may work but are not tested.
 
 Install
 -------
@@ -37,7 +38,7 @@ points. This is the same password that you use to log in to your Mac.
 
 It is highly recommended to run the script regularly to keep your computer
 up to date. Once the script has been installed, you'll be able to run it
-at your convenience by typing `laptop` and hitting `return` in your Terminal.
+at your convenience by typing `metanorma-setup` and hitting `return` in your Terminal.
 
 Debugging
 ---------
@@ -68,6 +69,7 @@ What it sets up
 [Node.js]: http://nodejs.org/
 [nvm]: https://github.com/creationix/nvm
 [NPM]: https://www.npmjs.org/
+[nvm]: https://github.com/creationix/nvm
 [puppeteer]: https://github.com/GoogleChrome/puppeteer
 [Ruby]: https://www.ruby-lang.org/en/
 [ruby-install]: https://github.com/postmodern/ruby-install
@@ -79,7 +81,7 @@ internet connection).
 Credits
 -------
 
-The metanorma-setup script is based on:
+The `metanorma-macos-setup` script is based on:
 
 * [18F's Laptop](https://github.com/18F/laptop) script (CC0 licensed)
 * [thoughtbot's laptop](https://github.com/thoughtbot/laptop) script (MIT licensed)

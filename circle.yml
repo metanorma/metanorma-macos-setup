@@ -7,9 +7,5 @@ machine:
     - git clone https://github.com/sstephenson/bats.git /tmp/bats && pushd /tmp/bats && sudo ./install.sh /usr/local && popd
 
 test:
-  override:
-    - cat seekrets-install | bash -
   post:
     - shellcheck mac
-    - shellcheck seekrets-install
-    - bats test/seekrets.bats

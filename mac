@@ -82,7 +82,7 @@ switch_to_latest_ruby() {
   chruby "ruby-$(latest_installed_ruby)"
 }
 
-append_to_file "$shell_file" "alias laptop='bash <(curl -s https://raw.githubusercontent.com/riboseinc/metanorma-macos-setup/master/metanorma-setup)'"
+append_to_file "$shell_file" "alias metanorma-setup='bash <(curl -s https://raw.githubusercontent.com/riboseinc/metanorma-macos-setup/master/metanorma-setup)'"
 
 # shellcheck disable=SC2016
 append_to_file "$shell_file" 'export PATH="$HOME/.bin:$PATH"'
@@ -135,7 +135,6 @@ if ! [ -x "$(command -v java)" ]; then
 fi
 
 # shellcheck disable=SC2016
-append_to_file "$shell_file" 'eval "$(hub alias -s)"'
 
 fancy_echo 'Checking on Node.js installation...'
 
@@ -145,7 +144,7 @@ if ! brew_is_installed "node"; then
     fancy_echo "See https://pages.18f.gov/frontend/#install-npm"
   elif ! command -v nvm > /dev/null; then
     fancy_echo 'Installing nvm and lts Node.js and npm...'
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
     export NVM_DIR="$HOME/.nvm"
     # shellcheck source=/dev/null
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -212,6 +211,9 @@ fancy_echo 'Updating Rubygems...'
 gem update --system
 
 gem_install_or_update 'bundler'
+
+fancy_echo 'Installing/Updating the `metanorma` gem...'
+gem_install_or_update 'metanorma'
 
 fancy_echo "Configuring Bundler ..."
 number_of_cores=$(sysctl -n hw.ncpu)
