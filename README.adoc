@@ -1,0 +1,71 @@
+= Metanorma macOS Setup
+
+image:https://img.shields.io/gem/v/metanorma-macos-setup.svg["Gem Version", link="https://rubygems.org/gems/metanorma-macos-setup"]
+image:https://img.shields.io/travis/riboseinc/metanorma-macos-setup/master.svg["Build Status", link="https://travis-ci.org/riboseinc/metanorma-macos-setup"]
+image:https://codeclimate.com/github/riboseinc/metanorma-macos-setup/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/riboseinc/metanorma-macos-setup"]
+
+== Purpose
+
+The `metanorma-setup` script is used to setup a macOS computer for the
+https://github.com/riboseinc/metanorma[Metanorma] publication workflow.
+
+* It can be run multiple times on the same machine safely.
+* It installs, upgrades, or skips packages based on what is already installed on the machine.
+
+== Requirements
+
+It supports:
+
+* https://www.apple.com/macos/high-sierra[macOS High Sierra (10.13)]
+* macOS Sierra (10.12)
+* macOS El Capitan (10.11)
+
+Older versions may work but are not tested.
+
+== Install
+
+Run this command in your macOS Terminal:
+
+[source,sh]
+----
+bash <(curl -s https://raw.githubusercontent.com/riboseinc/metanorma-macos-setup/master/metanorma-setup)
+----
+
+Note that the script will ask you to enter your macOS password at various
+points. This is the same password that you use to log in to your Mac.
+
+NOTE: Once the script is done, make sure to quit and relaunch Terminal.
+
+It is highly recommended to run the script regularly to keep your computer
+up to date. Once the script has been installed, you'll be able to run it
+at your convenience by typing `metanorma-setup` and hitting `return` in your Terminal.
+
+== What it sets up
+
+* https://github.com/postmodern/chruby[chruby] for managing [Ruby] versions
+* http://bundler.io[bundler] for managing [Ruby] gems
+* http://brew.sh[Homebrew] for managing operating system libraries
+* http://caskroom.io[Homebrew Cask] for quickly installing Mac apps from the command line
+* https://java.com[Java] which is a dependency for some of the Metanorma gems
+* https://github.com/creationix/nvm[nvm] for managing http://nodejs.org[Node.js] versions (includes latest Node.js and https://www.npmjs.org[NPM], for running apps and installing JavaScript packages)
+* https://github.com/GoogleChrome/puppeteer[puppeteer] for running Headless Chrome via Node.js (used to generate PDFs from HTML)
+* https://www.ruby-lang.org[ruby-install] for installing different versions of Ruby
+* http://www.sublimetext.com/3[Sublime Text 3] for coding all the things
+
+It should take less than 15 minutes to install (depends on your machine and
+internet connection).
+
+
+== Debugging
+
+Your most recent `metanorma-setup` run will be saved to `~/metanorma-setup.log`. Read through it to see if
+you can debug the issue yourself. If not, copy and paste the entire log into a
+https://github.com/riboseinc/metanorma-macos-setup/issues/new[new GitHub Issue] for us.
+
+
+== Credits
+
+The `metanorma-macos-setup` script is based on:
+
+* https://github.com/18F/laptop[18F's Laptop script] (CC0 license)
+* https://github.com/thoughtbot/laptop[thoughtbot's laptop script] (MIT license)
