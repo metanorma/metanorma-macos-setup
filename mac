@@ -129,50 +129,86 @@ else
   echo "in which case, you can ignore these errors."
 fi
 
-# install Java if it's not already there
-if ! [ -x "$(command -v java)" ]; then
-  brew cask install java
-fi
-
 # shellcheck disable=SC2016
 
-fancy_echo 'Checking on Node.js installation...'
+fancy_echo '[node] Checking on Node.js installation...'
 
-if ! brew_is_installed "node"; then
-  if command -v n > /dev/null; then
-    fancy_echo "We recommend using \`nvm\` and not \`n\`."
-    fancy_echo "See https://pages.18f.gov/frontend/#install-npm"
-  elif ! command -v nvm > /dev/null; then
-    fancy_echo 'Installing nvm and lts Node.js and npm...'
-    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-    export NVM_DIR="$HOME/.nvm"
-    # shellcheck source=/dev/null
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    nvm install node --lts
-  else
-    fancy_echo 'version manager detected.  Skipping...'
-  fi
-else
-  brew bundle --file=- <<EOF
-  brew 'node'
+if ! command -v nvm > /dev/null; then
+
+  if brew_is_installed "node"; then
+    fancy_echo <<EOF
+[node] We recommend you uninstall brew's Node and re-install Node through nvm.
+[node] You can re-run this script after uninstalling brew's Node to automatically install nvm.
 EOF
+
+  elif command -v n > /dev/null; then
+    fancy_echo <<EOF
+[node] We recommend using \`nvm\` and not \`n\`.
+[node] See https://pages.18f.gov/frontend/#install-npm
+[node] You can re-run this script after uninstalling \`n\` to automatically install nvm.
+EOF
+
+  else
+
+    fancy_echo '[node] Installing nvm and lts Node.js and npm...'
+    brew bundle --file=- <<EOF
+    brew 'nvm'
+EOF
+    append_to_file "$shell_file" 'export NVM_DIR="$HOME/.nvm"'
+    append_to_file "$shell_file" 'source /usr/local/opt/nvm/nvm.sh'
+
+    export NVM_DIR="$HOME/.nvm"
+    [ ! -x "$NVM_DIR" ] && mkdir "$NVM_DIR"
+    source /usr/local/opt/nvm/nvm.sh
+
+    nvm install node --lts
+  fi
+
+else
+  fancy_echo '[node] version manager detected.  Skipping...'
 fi
 
-fancy_echo '[node: puppeteer] Installing puppeteer...'
-npm install -g --save --save-exact puppeteer
+if npm list -g --depth 1 puppeteer > /dev/null 2>&1; then
+  fancy_echo '[node: puppeteer] Puppeteer already installed.'
+else
+  fancy_echo '[node: puppeteer] Installing puppeteer...'
+  npm install -g --save --save-exact puppeteer
+fi
 
-fancy_echo '...Finished Node.js installation checks.'
+fancy_echo '[node] ...Finished Node.js installation checks.'
+
+fancy_echo '[java] Checking on Java installation...'
+
+if command -v java >/dev/null; then
+  fancy_echo '[java] Java is already installed.'
+else
+
+  fancy_echo '[java] Installing \`jenv\`'
+  brew bundle --file=- <<EOF
+  brew 'jenv'
+EOF
+
+  append_to_file "$shell_file" 'export PATH="$HOME/.jenv/bin:$PATH"'
+  append_to_file "$shell_file" 'eval "$(jenv init -)"'
+
+  export PATH="$HOME/.jenv/bin:$PATH"
+  eval "$(jenv init -)"
+
+  new_java_home = "$(dirname $(readlink $(which javac)))/java_home"
+  fancy_echo '[java] Adding ${new_java_home} to \`jenv\`'
+  jenv add $(dirname $(readlink $(which javac)))/java_home
+fi
 
 
-fancy_echo 'Checking on Ruby installation...'
+fancy_echo '[ruby] Checking on Ruby installation...'
 
 append_to_file "$HOME/.gemrc" 'gem: --no-document'
 
 if command -v rbenv >/dev/null || command -v rvm >/dev/null; then
-  fancy_echo 'We recommend chruby and ruby-install over RVM or rbenv'
+  fancy_echo '[ruby] We recommend chruby and ruby-install over RVM or rbenv'
 else
   if ! brew_is_installed "chruby"; then
-    fancy_echo 'Installing chruby, ruby-install, and the latest Ruby...'
+    fancy_echo '[ruby] Installing chruby, ruby-install, and the latest Ruby...'
 
     brew bundle --file=- <<EOF
     brew 'chruby'
@@ -192,32 +228,35 @@ EOF
     brew 'chruby'
     brew 'ruby-install'
 EOF
-    fancy_echo 'Checking if a newer version of Ruby is available...'
+    fancy_echo '[ruby] Checking if a newer version of Ruby is available...'
     switch_to_latest_ruby
 
     ruby-install --latest > /dev/null
     latest_stable_ruby="$(cat < "$HOME/.cache/ruby-install/ruby/stable.txt" | tail -n1)"
 
     if ! [ "$latest_stable_ruby" = "$(latest_installed_ruby)" ]; then
-      fancy_echo "Installing latest stable Ruby version: $latest_stable_ruby"
+      fancy_echo "[ruby] Installing latest stable Ruby version: $latest_stable_ruby"
       ruby-install ruby
     else
-      fancy_echo 'You have the latest version of Ruby'
+      fancy_echo '[ruby] You have the latest version of Ruby'
     fi
   fi
 fi
 
-fancy_echo 'Updating Rubygems...'
+fancy_echo '[ruby] Updating Rubygems...'
 gem update --system
 
 gem_install_or_update 'bundler'
 
-fancy_echo 'Installing/Updating the `metanorma` gem...'
-gem_install_or_update 'metanorma'
-
-fancy_echo "Configuring Bundler ..."
+fancy_echo "[ruby] Configuring Bundler ..."
 number_of_cores=$(sysctl -n hw.ncpu)
 bundle config --global jobs $((number_of_cores - 1))
-fancy_echo '...Finished Ruby installation checks.'
 
-fancy_echo 'All done!'
+fancy_echo '[ruby] ...Finished Ruby installation checks.'
+
+# asciidoctor depends on Java
+
+fancy_echo '[metanorma] Installing/Updating the `metanorma` gem...'
+gem_install_or_update 'metanorma'
+
+fancy_echo '[metanorma-setup] Completed -- please re-launch Terminal!'
