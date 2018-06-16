@@ -30,7 +30,10 @@ Run this command in your macOS Terminal:
 bash <(curl -s https://raw.githubusercontent.com/riboseinc/metanorma-macos-setup/master/metanorma-setup)
 ----
 
-Note that the script will ask you to enter your macOS password at various
+It should take less than 15 minutes to install (depends on your machine and
+Internet connection).
+
+NOTE: The script will ask you to enter your macOS password at various
 points. This is the same password that you use to log in to your Mac.
 
 NOTE: Once the script is done, make sure to quit and relaunch Terminal.
@@ -50,9 +53,6 @@ at your convenience by typing `metanorma-setup` and hitting `return` in your Ter
 * https://github.com/GoogleChrome/puppeteer[puppeteer] for running Headless Chrome via Node.js (used to generate PDFs from HTML)
 * https://www.ruby-lang.org[ruby-install] for installing different versions of Ruby
 * http://www.sublimetext.com/3[Sublime Text 3] for coding all the things
-
-It should take less than 15 minutes to install (depends on your machine and
-internet connection).
 
 
 == Debugging
