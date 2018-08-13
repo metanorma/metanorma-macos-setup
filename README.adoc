@@ -51,6 +51,7 @@ at your convenience by typing `metanorma-setup` and hitting `return` in your Ter
 * https://java.com[Java] which is a dependency for some of the Metanorma gems
 * https://github.com/creationix/nvm[nvm] for managing http://nodejs.org[Node.js] versions (includes latest Node.js and https://www.npmjs.org[NPM], for running apps and installing JavaScript packages)
 * https://github.com/GoogleChrome/puppeteer[puppeteer] for running Headless Chrome via Node.js (used to generate PDFs from HTML)
+* http://plantuml.com[PlantUML] for creating UML diagrams in Ascii
 * https://www.ruby-lang.org[ruby-install] for installing different versions of Ruby
 * http://www.sublimetext.com/3[Sublime Text 3] for coding all the things
 
