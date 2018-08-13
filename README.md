@@ -60,6 +60,7 @@ What it sets up
 * [puppeteer] for running Headless Chrome via Node.js (used to generate PDFs from HTML)
 * [ruby-install] for installing different versions of Ruby
 * [Sublime Text 3] for coding all the things
+* [PlantUML] for creating UML diagrams in Ascii
 
 [Bundler]: http://bundler.io/
 [chruby]: https://github.com/postmodern/chruby
@@ -73,7 +74,8 @@ What it sets up
 [puppeteer]: https://github.com/GoogleChrome/puppeteer
 [Ruby]: https://www.ruby-lang.org/en/
 [ruby-install]: https://github.com/postmodern/ruby-install
-[Sublime Text 3]: http://www.sublimetext.com/3
+[Sublime Text 3]: http://www.sublimetext.com/3A
+[PlantUML]: http://plantuml.com
 
 It should take less than 15 minutes to install (depends on your machine and
 internet connection).
