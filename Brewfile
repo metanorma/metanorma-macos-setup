@@ -5,3 +5,4 @@ brew 'libgit2'
 brew 'plantuml'
 
 cask 'sublime-text'
+cask 'java'
