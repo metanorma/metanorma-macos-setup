@@ -173,7 +173,7 @@ else
   fancy_echo '[node] version manager detected.  Skipping...'
 fi
 
-if npm list -g --depth 1 puppeteer > /dev/null 2>&1; then
+if npm list -g --depth 0 | \grep [p]uppeteer > /dev/null 2>&1; then
   fancy_echo '[node: puppeteer] Puppeteer already installed.'
 else
   fancy_echo '[node: puppeteer] Installing puppeteer...'
