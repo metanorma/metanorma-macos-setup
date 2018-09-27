@@ -141,17 +141,17 @@ fancy_echo '[node] Checking on Node.js installation...'
 if ! command -v nvm > /dev/null; then
 
   if brew_is_installed "node"; then
-    fancy_echo <<EOF
+    fancy_echo "
 [node] We recommend you uninstall brew's Node and re-install Node through nvm.
 [node] You can re-run this script after uninstalling brew's Node to automatically install nvm.
-EOF
+"
 
   elif command -v n > /dev/null; then
-    fancy_echo <<EOF
+    fancy_echo "
 [node] We recommend using \`nvm\` and not \`n\`.
 [node] See https://pages.18f.gov/frontend/#install-npm
 [node] You can re-run this script after uninstalling \`n\` to automatically install nvm.
-EOF
+"
 
   else
 
