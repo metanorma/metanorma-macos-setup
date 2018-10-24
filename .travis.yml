@@ -1,0 +1,9 @@
+os: osx
+rvm:
+  - 2.5.1
+cache: bundler
+before_install:
+  - brew update
+script:
+  - ./metanorma-setup
+  - plantuml -testdot

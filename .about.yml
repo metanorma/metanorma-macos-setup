@@ -79,10 +79,10 @@ impact: >
 #   url: URL for detailed information
 #   badge: URL for the status badge
 services:
-- name: Circle CI
+- name: Travis CI
   category: Continous integration
-  url: https://circleci.com/gh/riboseinc/metanorma-macos-setup
-  badge: https://circleci.com/gh/riboseinc/metanorma-macos-setup.svg
+  url: https://travis-ci.com/riboseinc/metanorma-macos-setup
+  badge: https://travis-ci.com/riboseinc/metanorma-macos-setup.svg
 
 # Licenses that apply to the project and/or its components (required)
 # Items by property name pattern:
