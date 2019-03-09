@@ -1,12 +1,12 @@
 = Metanorma macOS Setup
 
-image:https://img.shields.io/travis/riboseinc/metanorma-macos-setup/master.svg["Build Status", link="https://travis-ci.com/riboseinc/metanorma-macos-setup"]
-image:https://codeclimate.com/github/riboseinc/metanorma-macos-setup/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/riboseinc/metanorma-macos-setup"]
+image:https://img.shields.io/travis/metanorma/metanorma-macos-setup/master.svg["Build Status", link="https://travis-ci.com/metanorma/metanorma-macos-setup"]
+image:https://codeclimate.com/github/metanorma/metanorma-macos-setup/badges/gpa.svg["Code Climate", link="https://codeclimate.com/github/metanorma/metanorma-macos-setup"]
 
 == Purpose
 
 The `metanorma-setup` script is used to setup a macOS computer for the
-https://github.com/riboseinc/metanorma[Metanorma] publication workflow.
+https://github.com/metanorma/metanorma[Metanorma] publication workflow.
 
 * It can be run multiple times on the same machine safely.
 * It installs, upgrades, or skips packages based on what is already installed on the machine.
@@ -27,7 +27,7 @@ Run this command in your macOS Terminal:
 
 [source,sh]
 ----
-bash <(curl -s https://raw.githubusercontent.com/riboseinc/metanorma-macos-setup/master/metanorma-setup)
+bash <(curl -s https://raw.githubusercontent.com/metanorma/metanorma-macos-setup/master/metanorma-setup)
 ----
 
 It should take less than 15 minutes to install (depends on your machine and
@@ -60,7 +60,7 @@ at your convenience by typing `metanorma-setup` and hitting `return` in your Ter
 
 Your most recent `metanorma-setup` run will be saved to `~/metanorma-setup.log`. Read through it to see if
 you can debug the issue yourself. If not, copy and paste the entire log into a
-https://github.com/riboseinc/metanorma-macos-setup/issues/new[new GitHub Issue] for us.
+https://github.com/metanorma/metanorma-macos-setup/issues/new[new GitHub Issue] for us.
 
 
 == Credits
